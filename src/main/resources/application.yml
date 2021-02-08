@@ -1,0 +1,16 @@
+server:
+  port: 8086
+
+zuul:
+  host:
+    connect-timeout-millis: 30000
+    socket-timeout-millis: 30000
+  routes:
+    exchange:
+      url: http://localhost:8083
+      path: /api-reto/**
+
+app:
+  security:
+    check-token: http://localhost:8085
+    authorization: YmNwLXJldG86c2VjcmV0
